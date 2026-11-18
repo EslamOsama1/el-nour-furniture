@@ -115,14 +115,20 @@
 }
 
 .carousel-controls :is(.slide-prev, .slide-next) {
+  -webkit-appearance: none;
+  appearance: none;
   display: grid;
   place-items: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
   padding: 0;
+  line-height: 1;
+  color: var(--ink);
 }
 .slide-chevron {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -189,4 +195,16 @@
   }
   footer.wrap { justify-content: center; text-align: center; gap: 8px 18px; }
   footer.wrap .footer-brand { flex-basis: 100%; }
+}
+
+
+@media (hover: none) {
+  .carousel-controls :is(.slide-prev, .slide-next):hover:not(:disabled) {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .carousel-controls :is(.slide-prev, .slide-next):active:not(:disabled) {
+    border-color: var(--wood);
+    color: var(--wood);
+  }
 }
