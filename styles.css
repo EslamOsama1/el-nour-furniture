@@ -113,3 +113,27 @@
   .nav-contact { display: none; }
   .menu-button { margin-inline-start: auto; }
 }
+
+@media (max-width: 720px) {
+  .carousel-heading { flex-wrap: wrap; align-items: center; gap: 10px; }
+  .carousel-controls { align-items: center; gap: 8px; }
+  .carousel-controls :is(.slide-prev, .slide-next) {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 0;
+    color: var(--ink);
+    background: var(--paper);
+  }
+  .carousel-controls :is(.slide-prev, .slide-next)::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+  .carousel-controls .slide-next::before { transform: rotate(225deg); }
+}
